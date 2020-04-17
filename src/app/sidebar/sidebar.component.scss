@@ -1,0 +1,123 @@
+$sidebar-background-color: #3a3838;
+$sidebar-highlight-color: darken(#3a3838, 5%);
+
+$sidebar-nav-selected: rgba(36, 133, 141, 0.808);
+$sidebar-nav-options-text: rgba(255,255,255,.5);
+
+
+.sidebar{
+  background-color: $sidebar-background-color;
+  color: $sidebar-highlight-color;
+}
+
+.sidebar-brand{
+  display: -webkit-box;
+  text-align: -webkit-box;
+  background-color: #282626c9;
+  width: inherit;
+  padding: 1rem;
+}
+
+// .navbar-brand{
+//   display: -webkit-box;
+//   text-align: -webkit-box;
+//   margin-right: 0px;
+//   height: 6rem;
+//   text-align: -webkit-center;
+//   font-size: 1.25rem;
+// }
+
+.brand-subtext{
+  margin-bottom: 0px;
+  font-size: 0.8rem;
+}
+
+.sidebar a{
+  color: $sidebar-nav-options-text
+}
+
+li .fa {
+    margin-right: 10px;
+  }
+  
+  .flex-column {
+    width: 100%;
+  }
+  
+  .navbar {
+    padding: 0;
+  }
+  
+  .navbar-brand {
+    padding: 15px;
+  }
+  
+  .navbar-toggler {
+    margin-right: 15px;
+  }
+  
+  .nav-link {
+    padding-left: 16px;
+  }
+  
+  /* Highlighting rules for nav menu items */
+  li.link-active a,
+  li.link-active a:hover,
+  li.link-active a:focus {
+    background-color: $sidebar-nav-selected;
+    color: white;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background-color: $sidebar-nav-selected;
+    color: white;
+  }
+
+  /* Keep the nav menu independent of scrolling and on top of other items */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  
+  @media (min-width: 575px) {
+    /* On small screens, convert the nav menu to a vertical sidebar */
+    .main-nav {
+      height: 100%;
+      width: fit-content;
+    }
+    .navbar {
+      border-radius: 0px;
+      border-width: 0px;
+      height: 100%;
+      display: block;
+    }
+    .navbar-header {
+      float: none;
+    }
+    .navbar-collapse {
+      border-top: 1px solid #444;
+      padding: 0px;
+    }
+    .navbar ul {
+      float: none;
+    }
+    .navbar li {
+      float: none;
+      font-size: 15px;
+      margin: 6px;
+    }
+    .navbar li a {
+      padding: 10px 16px;
+      border-radius: 4px;
+    }
+    .navbar a {
+      /* If a menu item's text is too long, truncate it */
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }

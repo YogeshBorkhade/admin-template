@@ -1,0 +1,80 @@
+
+  .body-content{
+    margin-bottom:90px;
+  }
+  .sidebar-nav {
+    width: calc(17% - 20px);
+    flex: none;
+  }
+
+  .main-layout{
+    min-height: 100%;
+    background-color: beige;
+    width: calc(100% - (17% - 20px) );
+    flex: none;
+    max-width: calc(100% - (17% - 20px) );
+    padding-left : 0px;
+    padding-right: 0px;
+  }
+  
+  body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+.root-container{
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-pane {
+  width: 15%;
+  height: 100%;
+  float: left;
+  background-color: rosybrown;
+  border-collapse: collapse;
+  position: absolute;
+  left: 0%;
+
+}
+
+.main-pane {
+  position: relative;
+  width: 85%;
+  left: 15%;
+  height: 100%;
+  float: left;
+  border-collapse: collapse;
+  margin-bottom: 80px;
+}
+
+
+/* ======================================================================================= */
+@media (max-width: 575px) {
+  /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+  .body-content {
+    padding-top: 90px;
+    margin-bottom: 90px;
+  }
+
+  .sidebar-nav {
+    display: contents;
+  }
+
+  .sidebar-pane {
+    height: 100%;
+    width: 0%;
+    background-color: rosybrown;
+    position: absolute;
+  }
+
+  .main-pane {
+    position: relative;
+    height: 100%;
+    padding-top: 19%;
+    left: 0;
+    width: 100%;
+  }
+}
+// media query ends

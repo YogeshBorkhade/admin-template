@@ -1,0 +1,149 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- User Form -->
+            <form class="container">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName">Name</label>
+                        <input type="text" [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" class="form-control"
+                            id="inputName" placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputLastName">Last Name</label>
+                        <input type="text" [(ngModel)]="user.lastname" [ngModelOptions]="{standalone: true}" class="form-control"
+                            id="inputLastName" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmpId">Employee Id</label>
+                        <input type="text" [(ngModel)]="user.empId" [ngModelOptions]="{standalone: true}" class="form-control"
+                            id="inputEmpId" placeholder="Id">
+                    </div>
+                    <div class="form-group col-md-5 offset-md-1">
+                        <label for="inputEmpId">Gender</label> <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="userGender" id="radioMale" value="male"
+                                (change)="userGenderIs($event)">
+                            <label class="form-check-label" for="radioMale"> Male </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="userGender" id="radioFemale" value="female"
+                                (change)="userGenderIs($event)">
+                            <label class="form-check-label" for="radioFemale">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputDept">Department</label>
+                        <input type="text" [(ngModel)]="user.department" [ngModelOptions]="{standalone: true}" class="form-control"
+                            id="inputDept" placeholder="Department">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputDept">Contact</label>
+                        <input type="number" [(ngModel)]="user.contact" [ngModelOptions]="{standalone: true}" class="form-control"
+                            id="inputDept" placeholder="Contact">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputExperience">Year of Experience</label>
+                        <input type="text" [(ngModel)]="user.yearOfExp" [ngModelOptions]="{standalone: true}" class="form-control"
+                            id="inputExperience" placeholder="Year of Experience">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <label for="inputTechnologies">Technologies</label><span class="text-secondary"> (press ctrl to
+                            select multiple) </span>
+                        <select multiple id="inputTechnologies" [(ngModel)]="user.technology" [ngModelOptions]="{standalone: true}"
+                            class="form-control">
+                            <option *ngFor="let p of technologies" [value]="p">{{p}}</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8">
+                        <label for="inputDesignation">Designation</label>
+                        <input type="text" [(ngModel)]="user.designation" [ngModelOptions]="{standalone: true}" class="form-control"
+                            id="inputDesignation" placeholder="Designation">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-10">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" class="form-control"
+                            id="inputEmail4" placeholder="Email">
+                    </div>
+                </div>
+                <button type="submit" (click)='userDetail()' class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <!-- User Profile Details -->
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-7">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"> &nbsp; </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h2> {{ user.name }} {{ user.lastname }} </h2>
+                                    <div *ngIf="user.email">
+                                        Email : {{ user.email }}
+                                    </div>
+                                    <div *ngIf="user.contact">
+                                        Contact : {{ user.contact }}
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-5">
+                    <img [src]="imagePath" alt="..." class="img-thumbnail">
+                </div>
+                <div class="col-md-12">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Department : {{ user.department }}
+                                </td>
+                                <td>
+                                    Experience : {{ user.yearOfExp }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Designation : {{ user.designation }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div *ngIf="user.technology">
+                                        Technologies : {{ user.technology }}.
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

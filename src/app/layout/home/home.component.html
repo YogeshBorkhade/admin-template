@@ -1,0 +1,75 @@
+<!-- <h1> Dashboard</h1> -->
+
+<div class="container-fluid">
+    <!-- Info Cards -->
+    <!-- <input [(ngModel)] = "loopValue" type="number" class="form-control" id="valueId" (change)="reGenerateCards()" >  {{ loopValue }} -->
+    <!-- (change)="valuechange($event)" -->
+    <div class="row card-info" id="cardContainer" *ngFor="let i of cardLoop">
+        <div class="col" *ngFor="let item of cardInfo">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text">{{ item.value }}</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <span class=" {{ item.icon }} "></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="chart-container">
+                <!-- style="position: relative; height:50vh; width:40wh" -->
+                <canvas id="bubbleChart"> </canvas>
+            </div>
+            <button (click)="generateSChartData()">Regenerate Data</button>
+        </div>
+        <div class="col-md-6">
+            <canvas id="barChart"></canvas>
+            <button (click)="generateBChartData()">Regenerate Data</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart-container">
+                <canvas id="lineChart" > </canvas>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="chart-container" style="position: relative; height:100%; width:100%">
+                <canvas id="doughnutChart"> </canvas>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="chart-container" style="position: relative; height:100%; width:100%">
+                <canvas id="pieChart"> </canvas>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="chart-container" style="position: relative; height:50vh; width:40wh">
+                <canvas id="pieChart"> </canvas>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <!-- insert data table -->
+        </div>
+
+        <div class="col-md-6">
+
+        </div>
+    </div>
+</div>
